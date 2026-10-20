@@ -1,0 +1,14 @@
+PREFIX alignment: <https://unila.ac.id/ontology/alignment#>
+SELECT ?evaluation ?npm ?status ?reasonCode ?reasonMessage
+WHERE {
+  GRAPH ?graph {
+    ?evaluation a alignment:ServiceEligibilityResult ;
+                alignment:applicantNpm ?npm ;
+                alignment:resultStatus ?status ;
+                alignment:hasReason ?reason .
+    ?reason alignment:reasonCode ?reasonCode ;
+            alignment:reasonMessage ?reasonMessage .
+  }
+}
+ORDER BY ?evaluation ?reasonCode
+LIMIT 500

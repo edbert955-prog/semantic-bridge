@@ -1,0 +1,43 @@
+# Laravel / PHP dependencies
+/vendor/
+/node_modules/
+/public/build/
+/public/hot
+/public/storage
+/.phpunit.cache
+/.phpunit.result.cache
+
+# Secrets and local environment
+/.env
+/.env.*
+!/.env.example
+
+# Laravel generated runtime files
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/testing/*
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Generated semantic evaluation graphs (keep ontology source files tracked)
+/storage/app/semantic-graphs/*
+!/storage/app/semantic-graphs/.gitignore
+
+# Compiled Java/Maven output; commit pom.xml and src/, build the JAR locally
+/semantic-reasoner/target/
+
+# IDE / OS / logs
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+*.log
+*.dump
+*.backup
+*.sql.gz
+
+# Local backup/export folders
+/backups/
+/database/dumps/

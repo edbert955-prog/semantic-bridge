@@ -1,0 +1,13 @@
+PREFIX alignment: <https://unila.ac.id/ontology/alignment#>
+SELECT ?evaluation ?npm ?service ?status ?evaluatedAt
+WHERE {
+  GRAPH ?graph {
+    ?evaluation a alignment:ServiceEligibilityResult ;
+                alignment:applicantNpm ?npm ;
+                alignment:serviceCode ?service ;
+                alignment:resultStatus ?status .
+    OPTIONAL { ?evaluation alignment:evaluatedAt ?evaluatedAt }
+  }
+}
+ORDER BY DESC(?evaluatedAt)
+LIMIT 100

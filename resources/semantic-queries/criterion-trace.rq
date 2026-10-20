@@ -1,0 +1,11 @@
+PREFIX alignment: <https://unila.ac.id/ontology/alignment#>
+SELECT ?evaluation ?criterion ?status ?message
+WHERE {
+  GRAPH <REPLACE_WITH_GRAPH_URI> {
+    <REPLACE_WITH_EVALUATION_URI> alignment:hasCriterionResult ?criterion .
+    ?criterion alignment:criterionCode ?code ;
+               alignment:criterionStatus ?status ;
+               alignment:criterionMessage ?message .
+  }
+}
+ORDER BY ?criterion
